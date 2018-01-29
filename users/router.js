@@ -58,15 +58,8 @@ router.post('/', jsonParser, (req, res) => {
     }
 
     const sizedFields = {
-        username: {
-            min: 1
-        },
-        password: {
-            min: 10,
-            // bcrypt truncates after 72 characters, so let's not give the illusion
-            // of security by storing extra (unused) info
-            max: 72
-        }
+        username: {min: 1},
+        password: {min: 10, max: 72}
     };
     const tooSmallField = Object.keys(sizedFields).find(
         field =>

@@ -1,7 +1,9 @@
 const express = require('express');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+const {User} = require('../users/models');
 const config = require('../config');
 
 const createAuthToken = user => {
@@ -14,15 +16,34 @@ const createAuthToken = user => {
 
 const router = express.Router();
 
-router.post(
-    '/login',
-    // The user provides a username and password to login
-    passport.authenticate('basic', {session: false}),
-    (req, res) => {
-        const authToken = createAuthToken(req.user.apiRepr());
-        res.json({authToken});
-    }
-);
+router.post('/login', jsonParser, (req, res) => {
+  let user;
+  User
+    .findOne({username: req.body.username})
+    .then(_user => {
+      user = _user;
+      if (!user) {
+        return res.status(401).send({
+          reason: 'LoginError',
+          message: 'Incorrect username or password.'
+        });
+      }
+      return user.validatePassword(req.body.password);
+    })
+    .then( () => {
+      const authToken = createAuthToken(user.apiRepr());
+      res.json({
+        authToken: authToken,
+        username: user.username
+      });
+    })
+    .catch(error => {console.log(error);
+      return res.status(401).send({
+        reason: 'LoginError',
+        message: 'Incorrect username or password'
+      });
+    });
+});
 
 router.post(
     '/refresh',
