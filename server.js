@@ -47,18 +47,26 @@ app.get('/paycheck-planner', (req, res) => {
 app.get('/paycheck-planner/notices', (req, res) => {
   const notices = [
     {
+      id: 1,
+      type: `ManageEvent`,
+      nextStep: `View`,
       title: `Notice 1`,
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et accumsan tellus, non fermentum est. In sed dapibus libero, a laoreet tortor.`,
       button1: `Go to Event`,
       button2: `Dismiss`
     },
     {
+      id: 2,
+      type: `Event`,
+      nextStep: `AddEvent`,
       title: `Notice 2`,
       description: `Vivamus at quam et risus pharetra laoreet et non tellus. Ut facilisis magna quis erat aliquet hendrerit.`,
       button1: `Add Event`,
       button2: `Dismiss`
     },
     {
+      id: 3,
+      type: `Contact`,
       title: `Notice 3`,
       description: `Praesent feugiat nisi ut velit iaculis, eget accumsan mauris pulvinar. Vivamus vitae ex congue, faucibus diam in, volutpat nulla.`,
       button1: `Go to Event`,
@@ -80,18 +88,27 @@ app.get('/savings-booster', (req, res) => {
 app.get('/savings-booster/messages', (req, res) => {
   const messages = [
     {
+      id: 1,
+      type: `Message`,
+      nextStep: `Read`,
       title: `Message 1`,
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et accumsan tellus, non fermentum est. In sed dapibus libero, a laoreet tortor.`,
       button1: `Read More...`,
       button2: `Dismiss`
     },
     {
+      id: 2,
+      type: `Service`,
+      nextStep: `Activate`,
       title: `Message 2`,
       description: `Vivamus at quam et risus pharetra laoreet et non tellus. Ut facilisis magna quis erat aliquet hendrerit.`,
       button1: `Turn On`,
       button2: `Dismiss`
     },
     {
+      id: 3,
+      type: `Contact`,
+      nextStep: `Contact`,
       title: `Message 3`,
       description: `Praesent feugiat nisi ut velit iaculis, eget accumsan mauris pulvinar. Vivamus vitae ex congue, faucibus diam in, volutpat nulla.`,
       button1: `Yes Please!`,
