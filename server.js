@@ -52,7 +52,7 @@ app.get('/paycheck-planner/notices', (req, res) => {
       onConfirm: `View`,
       onCancel: `Close`,
       title: `Notice 1`,
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et accumsan tellus, non fermentum est. In sed dapibus libero, a laoreet tortor.`,
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et accumsan tellus, non fermentum est. In sed dapibus libero.`,
       button1: `Go to Event`,
       button2: `Dismiss`
     },
@@ -72,7 +72,7 @@ app.get('/paycheck-planner/notices', (req, res) => {
       onConfirm: `OpenEmail`,
       onCancel: `Dashboard`,
       title: `Notice 3`,
-      description: `Praesent feugiat nisi ut velit iaculis, eget accumsan mauris pulvinar. Vivamus vitae ex congue, faucibus diam in, volutpat nulla.`,
+      description: `Praesent feugiat nisi ut velit iaculis, eget accumsan mauris pulvinar. Vivamus vitae ex congue.`,
       button1: `Go to Event`,
       button2: `Email Us`
     }
@@ -97,7 +97,7 @@ app.get('/savings-booster/messages', (req, res) => {
       onConfirm: `Clear`,
       onCancel: 'Dismiss',
       title: `Message 1`,
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et accumsan tellus, non fermentum est. In sed dapibus libero, a laoreet tortor.`,
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et accumsan tellus, non fermentum est. In sed dapibus.`,
       button1: `Read More...`,
       button2: `Dismiss`
     },
@@ -117,7 +117,7 @@ app.get('/savings-booster/messages', (req, res) => {
       onConfirm: `Contact`,
       onCancel: `Close`,
       title: `Message 3`,
-      description: `Praesent feugiat nisi ut velit iaculis, eget accumsan mauris pulvinar. Vivamus vitae ex congue, faucibus diam in, volutpat nulla.`,
+      description: `Praesent feugiat nisi ut velit iaculis, eget accumsan mauris pulvinar. Vivamus vitae ex congue, faucibus.`,
       button1: `Yes Please!`,
       button2: `No Thanks`
     }
