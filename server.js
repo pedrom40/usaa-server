@@ -37,9 +37,9 @@ app.get('/home', (req, res) => {
 
 app.get('/paycheck-planner', (req, res) => {
 
-  if (Math.random() < 0.25) {
-    res.status(500).send({ error: 'Something went wrong when fetching paycheck planner content...' })
-  }
+  // if (Math.random() < 0.25) {
+  //   res.status(500).send({ error: 'Something went wrong when fetching paycheck planner content...' })
+  // }
 
   res.json({content: `Content for paycheck planner page...`});
 
@@ -49,7 +49,8 @@ app.get('/paycheck-planner/notices', (req, res) => {
     {
       id: 1,
       type: `ManageEvent`,
-      nextStep: `View`,
+      onConfirm: `View`,
+      onCancel: `Close`,
       title: `Notice 1`,
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et accumsan tellus, non fermentum est. In sed dapibus libero, a laoreet tortor.`,
       button1: `Go to Event`,
@@ -58,7 +59,8 @@ app.get('/paycheck-planner/notices', (req, res) => {
     {
       id: 2,
       type: `Event`,
-      nextStep: `AddEvent`,
+      onConfirm: `AddEvent`,
+      onCancel: `Close`,
       title: `Notice 2`,
       description: `Vivamus at quam et risus pharetra laoreet et non tellus. Ut facilisis magna quis erat aliquet hendrerit.`,
       button1: `Add Event`,
@@ -67,6 +69,8 @@ app.get('/paycheck-planner/notices', (req, res) => {
     {
       id: 3,
       type: `Contact`,
+      onConfirm: `OpenEmail`,
+      onCancel: `Dashboard`,
       title: `Notice 3`,
       description: `Praesent feugiat nisi ut velit iaculis, eget accumsan mauris pulvinar. Vivamus vitae ex congue, faucibus diam in, volutpat nulla.`,
       button1: `Go to Event`,
@@ -78,9 +82,9 @@ app.get('/paycheck-planner/notices', (req, res) => {
 
 app.get('/savings-booster', (req, res) => {
 
-  if (Math.random() < 0.25) {
-    res.status(500).send({ error: 'Something went wrong when fetching savings booster content...' })
-  }
+  // if (Math.random() < 0.25) {
+  //   res.status(500).send({ error: 'Something went wrong when fetching savings booster content...' })
+  // }
 
   res.json({content: `Content for savings booster page...`});
 
@@ -90,7 +94,8 @@ app.get('/savings-booster/messages', (req, res) => {
     {
       id: 1,
       type: `Message`,
-      nextStep: `Read`,
+      onConfirm: `Clear`,
+      onCancel: 'Dismiss',
       title: `Message 1`,
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et accumsan tellus, non fermentum est. In sed dapibus libero, a laoreet tortor.`,
       button1: `Read More...`,
@@ -99,7 +104,8 @@ app.get('/savings-booster/messages', (req, res) => {
     {
       id: 2,
       type: `Service`,
-      nextStep: `Activate`,
+      onConfirm: `Activate`,
+      onCancel: `Close`,
       title: `Message 2`,
       description: `Vivamus at quam et risus pharetra laoreet et non tellus. Ut facilisis magna quis erat aliquet hendrerit.`,
       button1: `Turn On`,
@@ -108,7 +114,8 @@ app.get('/savings-booster/messages', (req, res) => {
     {
       id: 3,
       type: `Contact`,
-      nextStep: `Contact`,
+      onConfirm: `Contact`,
+      onCancel: `Close`,
       title: `Message 3`,
       description: `Praesent feugiat nisi ut velit iaculis, eget accumsan mauris pulvinar. Vivamus vitae ex congue, faucibus diam in, volutpat nulla.`,
       button1: `Yes Please!`,
